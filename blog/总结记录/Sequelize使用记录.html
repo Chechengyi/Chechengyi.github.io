@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sequelize 使用记录 | 车程一的博客</title>
+    <meta name="description" content="车程一的博客">
+    <link rel="icon" href="/vue-logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.2fbf6f8b.css" as="style"><link rel="preload" href="/assets/js/app.7b18d2f0.js" as="script"><link rel="preload" href="/assets/js/30.ef956d23.js" as="script"><link rel="prefetch" href="/assets/js/10.ea08bc69.js"><link rel="prefetch" href="/assets/js/11.59d62fd9.js"><link rel="prefetch" href="/assets/js/12.426af9d7.js"><link rel="prefetch" href="/assets/js/13.b2bd6144.js"><link rel="prefetch" href="/assets/js/14.1790ff5e.js"><link rel="prefetch" href="/assets/js/15.584f93ea.js"><link rel="prefetch" href="/assets/js/16.659d2a43.js"><link rel="prefetch" href="/assets/js/17.7825b058.js"><link rel="prefetch" href="/assets/js/18.0b08fef9.js"><link rel="prefetch" href="/assets/js/19.c553a9ae.js"><link rel="prefetch" href="/assets/js/2.ef1579f9.js"><link rel="prefetch" href="/assets/js/20.1a95086a.js"><link rel="prefetch" href="/assets/js/21.57c66887.js"><link rel="prefetch" href="/assets/js/22.3570ca0d.js"><link rel="prefetch" href="/assets/js/23.7fe8ebe9.js"><link rel="prefetch" href="/assets/js/24.5c706192.js"><link rel="prefetch" href="/assets/js/25.d8757158.js"><link rel="prefetch" href="/assets/js/26.8399a71b.js"><link rel="prefetch" href="/assets/js/27.4b3a213a.js"><link rel="prefetch" href="/assets/js/28.eb31cdf1.js"><link rel="prefetch" href="/assets/js/29.577144a6.js"><link rel="prefetch" href="/assets/js/3.62eea2c7.js"><link rel="prefetch" href="/assets/js/31.2e8ab40d.js"><link rel="prefetch" href="/assets/js/32.9d1685a0.js"><link rel="prefetch" href="/assets/js/33.d800be4d.js"><link rel="prefetch" href="/assets/js/34.85d350fe.js"><link rel="prefetch" href="/assets/js/35.1625e166.js"><link rel="prefetch" href="/assets/js/36.5cf7699d.js"><link rel="prefetch" href="/assets/js/37.0437fe8d.js"><link rel="prefetch" href="/assets/js/38.ca058290.js"><link rel="prefetch" href="/assets/js/39.d4f95e20.js"><link rel="prefetch" href="/assets/js/4.91c625b2.js"><link rel="prefetch" href="/assets/js/40.211acfac.js"><link rel="prefetch" href="/assets/js/41.a5df0168.js"><link rel="prefetch" href="/assets/js/42.6318b490.js"><link rel="prefetch" href="/assets/js/43.a6543bac.js"><link rel="prefetch" href="/assets/js/44.b04565e5.js"><link rel="prefetch" href="/assets/js/45.3bb1a5c1.js"><link rel="prefetch" href="/assets/js/46.15ed4362.js"><link rel="prefetch" href="/assets/js/47.e838dcd2.js"><link rel="prefetch" href="/assets/js/48.0a220d6c.js"><link rel="prefetch" href="/assets/js/49.a81b7774.js"><link rel="prefetch" href="/assets/js/5.a6bc510c.js"><link rel="prefetch" href="/assets/js/50.5ae2a1df.js"><link rel="prefetch" href="/assets/js/51.1e50c0a5.js"><link rel="prefetch" href="/assets/js/52.05832c5b.js"><link rel="prefetch" href="/assets/js/6.edf1ab01.js"><link rel="prefetch" href="/assets/js/7.75a4d63f.js"><link rel="prefetch" href="/assets/js/8.ac427bc7.js"><link rel="prefetch" href="/assets/js/9.7c5ccd0b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2fbf6f8b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">车程一的博客</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div> <a href="https://github.com/chechengyi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    我的github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div> <a href="https://github.com/chechengyi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    我的github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>前端实战</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>js相关</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>react理解</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>总结记录</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/总结记录/浏览器渲染过程以及事件循环.html" class="sidebar-link">浏览器渲染过程以及事件循环</a></li><li><a href="/blog/总结记录/Sequelize使用记录.html" class="active sidebar-link">Sequelize 使用记录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_1、sequelize-迁移工具-migrations" class="sidebar-link">1、Sequelize 迁移工具 Migrations</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_1-1-安装-sequelize-cli-和初始化" class="sidebar-link">1.1 安装 sequelize-cli 和初始化</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_2-实际使用示范" class="sidebar-link">2 实际使用示范</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_2-1-编写model" class="sidebar-link">2.1 编写model</a></li><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_2-2-编写迁移文件" class="sidebar-link">2.2 编写迁移文件</a></li><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_2-3-表的更新" class="sidebar-link">2.3 表的更新</a></li><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_2-3-添加种子" class="sidebar-link">2.3 添加种子</a></li><li class="sidebar-sub-header"><a href="/blog/总结记录/Sequelize使用记录.html#_2-4-查询" class="sidebar-link">2.4 查询</a></li></ul></li></ul></li><li><a href="/blog/总结记录/TCP、http、udp记录.html" class="sidebar-link">TCP、http、udp记录</a></li><li><a href="/blog/总结记录/https 原理与传输.html" class="sidebar-link">https 原理与传输</a></li><li><a href="/blog/总结记录/编写typescript声明文件.html" class="sidebar-link">编写typescript声明文件</a></li><li><a href="/blog/总结记录/Docker 安装及使用.html" class="sidebar-link">Docker 使用</a></li><li><a href="/blog/总结记录/JS位运算.html" class="sidebar-link">JS位运算</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>数据结构算法</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="sequelize-使用记录"><a href="#sequelize-使用记录" aria-hidden="true" class="header-anchor">#</a> Sequelize 使用记录</h1> <p><code>sequelize</code> 是一款强大的 <code>orm</code> 工具。写下本篇文章记录一下 <code>sequelize</code> 使用过程。</p> <p>此处先贴出一条终极建议：</p> <p><strong>在使用 Sequelize 后，数据库字段的命名请尽可能地使用下划线命名的方式。我发现 Sequelize 在会将驼峰的命名自动的转换为下划线的命名方式，这个坑让我在多对多定义外键的时候头皮都差点抓掉了，如果想要接口输出到前端美观是驼峰式命名，可以在 model 定义的时候添加 field 属性</strong></p> <h2 id="_1、sequelize-迁移工具-migrations"><a href="#_1、sequelize-迁移工具-migrations" aria-hidden="true" class="header-anchor">#</a> 1、Sequelize 迁移工具 Migrations</h2> <p>其实之前也略微接触过 <code>Sequelize</code>，那时候生成数据库表是直接写model，然后运行 <code>.sync</code> 方法。这样的做法在个人小项目中使用也显得很方面，但是如果是多人协作的项目，或者是一个需要长期去维护的项目，这样做劣势比较明显，很简单的一点，随着项目的迭代，有很多时候需要改数据库表，比如增加字段什么的。如果使用这样的方法，使得开发人员增加的行为根本无法追踪。我认为，使用 <code>Migrations</code> 的意义在于，规范开发人员对于数据库修改操作。</p> <h3 id="_1-1-安装-sequelize-cli-和初始化"><a href="#_1-1-安装-sequelize-cli-和初始化" aria-hidden="true" class="header-anchor">#</a> 1.1 安装 sequelize-cli 和初始化</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> --save sequelize-cli
+</code></pre></div><p>然后在项目中就可以以：</p> <div class="language-ba extra-class"><pre class="language-text"><code>npx sequelizt xxx
+</code></pre></div><p>在实际的项目中，我们希望所有与数据库 <code>Migrations</code> 相关的内容都放到 <code>database</code> 目录下，所以在项目根目录下新建一个 <code>.sequelizerc</code> 配置文件：</p> <div class="language- extra-class"><pre class="language-text"><code>'use strict';
+
+const path = require('path');
+
+module.exports = {
+  config: path.join(__dirname, 'database/config.json'),
+  'migrations-path': path.join(__dirname, 'database/migrations'), // 迁移脚本存放文件
+  'seeders-path': path.join(__dirname, 'database/seeders'), // 种子脚本文件
+  'models-path': path.join(__dirname, 'app/model'), // 模型文件
+};
+</code></pre></div><p>然后初始化 <code>Migrations</code> 和目录：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>npx sequelize init:config
+npx sequelize init:migrations
+</code></pre></div><p>这样会在项目的根目录下生成一个 <code>database</code> 文件夹，里面有一个 <code>config.json</code> 文件：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;development&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> // 开发环境数据库
+    <span class="token property">&quot;username&quot;</span><span class="token operator">:</span> <span class="token string">&quot;root&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;password&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;database&quot;</span><span class="token operator">:</span> <span class="token string">&quot;test&quot;</span><span class="token punctuation">,</span> // 数据库名称
+    <span class="token property">&quot;host&quot;</span><span class="token operator">:</span> <span class="token string">&quot;localhost&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;dialect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;mysql&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;test&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>    // 测试数据库
+    <span class="token property">&quot;username&quot;</span><span class="token operator">:</span> <span class="token string">&quot;root&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;password&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;database&quot;</span><span class="token operator">:</span> <span class="token string">&quot;test1&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;host&quot;</span><span class="token operator">:</span> <span class="token string">&quot;localhost&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;dialect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;mysql&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;production&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> // 生产环境数据库
+    <span class="token property">&quot;username&quot;</span><span class="token operator">:</span> <span class="token string">&quot;root&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;password&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;database&quot;</span><span class="token operator">:</span> <span class="token string">&quot;database_production&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;host&quot;</span><span class="token operator">:</span> <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;dialect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;mysql&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>还会生成一个<code>migrations</code> 文件夹，这个文件夹下就存放着我们将要进行的迁移脚本文件。</p> <h2 id="_2-实际使用示范"><a href="#_2-实际使用示范" aria-hidden="true" class="header-anchor">#</a> 2 实际使用示范</h2> <p>接下来记录一下一个简单场景的实际使用操作，项目以 <code>egg.js</code> 初始化的项目为背景。比如我现在想要设计一个 <code>RBAC</code>，那么接下来将要设计三张表：`用户表(User)、角色表(Role)、权限表(Permission)。总体来说就是五张表，如下所示：</p> <p><img src="https://s3.ax1x.com/2020/12/01/DhFdbQ.png" alt></p> <p>为什么要选用这个例子呢，因为这里刚好可以记录一下  <code>sequelize</code> 多对多关系的外键设置，我想多对多都会了的话，一对多什么的就不再话下了吧？但是考虑到工作量，接下来的例子只设计三张表：用户表、角色表以及用户角色表。</p> <h3 id="_2-1-编写model"><a href="#_2-1-编写model" aria-hidden="true" class="header-anchor">#</a> 2.1 编写model</h3> <p>首先第一步是要确定模型，我们在  <code>.sequelizerc</code> 配置文件中所声明的 <code>models-path</code> 下编写模型。</p> <p><code>User</code> model：</p> <div class="language-ts extra-class"><pre class="language-ts"><code>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span>app<span class="token punctuation">:</span> Egg<span class="token punctuation">.</span>Application<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">STRING</span><span class="token punctuation">,</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> <span class="token constant">DATE</span> <span class="token punctuation">}</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>Sequelize<span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> User <span class="token operator">=</span> app<span class="token punctuation">.</span>model<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    created_at<span class="token punctuation">:</span> <span class="token constant">DATE</span><span class="token punctuation">,</span>
+    updated_at<span class="token punctuation">:</span> <span class="token constant">DATE</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  User<span class="token punctuation">.</span><span class="token function-variable function">associate</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>models<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    User<span class="token punctuation">.</span><span class="token function">belongsToMany</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Role<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token keyword">as</span><span class="token punctuation">:</span> <span class="token string">'roles'</span><span class="token punctuation">,</span>
+      through<span class="token punctuation">:</span> models<span class="token punctuation">.</span>UserRole<span class="token punctuation">,</span>
+      foreignKey<span class="token punctuation">:</span> <span class="token string">'user_id'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> User
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>Role</code> model:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span>app<span class="token punctuation">:</span> Egg<span class="token punctuation">.</span>Application<span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">STRING</span><span class="token punctuation">,</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> <span class="token constant">DATE</span> <span class="token punctuation">}</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>Sequelize<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> Role <span class="token operator">=</span> app<span class="token punctuation">.</span>model<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'role'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    created_at<span class="token punctuation">:</span> <span class="token constant">DATE</span><span class="token punctuation">,</span>
+    updated_at<span class="token punctuation">:</span> <span class="token constant">DATE</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  Role<span class="token punctuation">.</span><span class="token function-variable function">associate</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>models<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Role<span class="token punctuation">.</span><span class="token function">belongsToMany</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>User<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token keyword">as</span><span class="token punctuation">:</span> <span class="token string">'users'</span><span class="token punctuation">,</span>
+      through<span class="token punctuation">:</span> models<span class="token punctuation">.</span>UserRole<span class="token punctuation">,</span>
+      foreignKey<span class="token punctuation">:</span> <span class="token string">'role_id'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> Role
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>UserRole</code> model:</p> <div class="language-ts extra-class"><pre class="language-ts"><code>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span>app<span class="token punctuation">:</span> Egg<span class="token punctuation">.</span>Application<span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">INTEGER</span> <span class="token punctuation">}</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>Sequelize<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> UserRole <span class="token operator">=</span> app<span class="token punctuation">.</span>model<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'user_role'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    user_id<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    role_id<span class="token punctuation">:</span> <span class="token constant">INTEGER</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    timestamps<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment">// 这里必须写上这个，不然关联查询的时候会报</span>
+    									<span class="token comment">// user_roles 表没有 createAt 这个属性，暂不知道原因</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> UserRole
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-2-编写迁移文件"><a href="#_2-2-编写迁移文件" aria-hidden="true" class="header-anchor">#</a> 2.2 编写迁移文件</h3> <p>接下来编写迁移文件，执行：</p> <p><code>npx sequelize-cli migration:create --name User</code></p> <p>它会在 migrations 目录下自动创建一个时间-表名.js 的脚本文件。</p> <p>user 的迁移脚本：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  up<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> <span class="token constant">DATE</span><span class="token punctuation">,</span> <span class="token constant">STRING</span> <span class="token punctuation">}</span> <span class="token operator">=</span> Sequelize
+    <span class="token keyword">return</span> queryInterface<span class="token punctuation">.</span><span class="token function">createTable</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      age<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+      created_at<span class="token punctuation">:</span> <span class="token constant">DATE</span><span class="token punctuation">,</span>
+      updated_at<span class="token punctuation">:</span> <span class="token constant">DATE</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  down<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */</span>
+    <span class="token keyword">await</span> queryInterface<span class="token punctuation">.</span><span class="token function">dropTable</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>role的迁移脚本：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  up<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> <span class="token constant">DATE</span><span class="token punctuation">,</span> <span class="token constant">STRING</span> <span class="token punctuation">}</span> <span class="token operator">=</span> Sequelize
+    <span class="token keyword">return</span> queryInterface<span class="token punctuation">.</span><span class="token function">createTable</span><span class="token punctuation">(</span><span class="token string">'roles'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      created_at<span class="token punctuation">:</span> <span class="token constant">DATE</span><span class="token punctuation">,</span>
+      updated_at<span class="token punctuation">:</span> <span class="token constant">DATE</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  down<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */</span>
+    <span class="token keyword">await</span> queryInterface<span class="token punctuation">.</span><span class="token function">dropTable</span><span class="token punctuation">(</span><span class="token string">'roles'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>user_role的迁移脚本：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  up<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> <span class="token constant">STRING</span> <span class="token punctuation">}</span> <span class="token operator">=</span> Sequelize
+    <span class="token keyword">return</span> queryInterface<span class="token punctuation">.</span><span class="token function">createTable</span><span class="token punctuation">(</span><span class="token string">'user_role'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span> primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      user_id<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        references<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          model<span class="token punctuation">:</span> <span class="token string">'users'</span><span class="token punctuation">,</span>
+          key<span class="token punctuation">:</span> <span class="token string">'id'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      role_id<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        references<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          model<span class="token punctuation">:</span> <span class="token string">'roles'</span><span class="token punctuation">,</span>
+          key<span class="token punctuation">:</span> <span class="token string">'id'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  down<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */</span>
+    <span class="token keyword">await</span> queryInterface<span class="token punctuation">.</span><span class="token function">dropTable</span><span class="token punctuation">(</span><span class="token string">'user_role'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>将脚本文件写好后，执行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>npx sequelize db:migrate
+</code></pre></div><p>接下来去数据库中查看，就可以看到生成了三张表。</p> <h3 id="_2-3-表的更新"><a href="#_2-3-表的更新" aria-hidden="true" class="header-anchor">#</a> 2.3 表的更新</h3> <p>在实际的开发过程中，很多时候需要给一张表添加字段，这时候需要重新编写更新表的迁移脚本。比如，现在我想要在 <code>User</code> 表中添加一个性别字段，这个字段为sex。首先，使用命令添加一个新的迁移脚本：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>npx sequelize-cli migration:create --name User-AddSex
+</code></pre></div><p>然后编写脚本文件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  up<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */</span>
+    <span class="token keyword">return</span> queryInterface<span class="token punctuation">.</span><span class="token function">addColumn</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      type<span class="token punctuation">:</span> Sequelize<span class="token punctuation">.</span><span class="token constant">INTEGER</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  down<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>queryInterface<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */</span>
+    <span class="token keyword">return</span> queryInterface<span class="token punctuation">.</span><span class="token function">removeColumn</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>然后在执行: <code>npx sequelize db:migrate</code>。就完成了更新表的操作，当然，别忘记了记得在 model 处也映射新添加的字段。</p> <p>需要注意的是，更新表的时候，一定要写新的迁移脚本文件，<code>npx sequelize db:migrate</code> 命令只会执行没有运行过的脚本文件。这样做可以清晰的看到表的操作过程，将每一次的更新隔离开，也有助于回滚操作。通过：<code>db:migrate:undo</code> 命令则可以执行回退操作，就是执行迁移文件里面的 <code>down</code> 方法。</p> <h3 id="_2-3-添加种子"><a href="#_2-3-添加种子" aria-hidden="true" class="header-anchor">#</a> 2.3 添加种子</h3> <p>这个操作其实就是往数据库里面添加一些数据。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>npx sequelize-cli seed:generate --name demo-user
+</code></pre></div><p>执行这个命令会在 <code>migrations</code> 文件夹下生成一个 <code>seeders</code> 文件夹，里面会生成 <code>xxxxx-demo-user.js</code> 文件，很显然，这是要向 <code>User</code> 表里面插入的数据，</p> <p>然后执行命令将种子插入到数据库中：<code>npx sequelize-cli db:seed:all</code></p> <h3 id="_2-4-查询"><a href="#_2-4-查询" aria-hidden="true" class="header-anchor">#</a> 2.4 查询</h3> <p>假如，现在我想要在查询用户的时候，顺便也查出当前用户拥有哪些角色应该怎么做呢？以在 <code>egg.js</code> 中的 <code>sevice</code> 层操作为例子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> users <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span>model<span class="token punctuation">.</span>User<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      include<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        model<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span>model<span class="token punctuation">.</span>Role<span class="token punctuation">,</span>
+        <span class="token keyword">as</span><span class="token punctuation">:</span> <span class="token string">'roles'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> users<span class="token punctuation">;</span>
+</code></pre></div><p>在查询的时候使用添加一个 <code>include</code> 属性，注意，这里的 <code>as: roles</code> 必须与在定义外建关系的时候设置的 <code>as</code> 命名相同：</p> <div class="language-ts extra-class"><pre class="language-ts"><code>User<span class="token punctuation">.</span><span class="token function">belongsToMany</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>model<span class="token punctuation">.</span>Role<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token keyword">as</span><span class="token punctuation">:</span> <span class="token string">'roles'</span><span class="token punctuation">,</span>
+      through<span class="token punctuation">:</span> app<span class="token punctuation">.</span>model<span class="token punctuation">.</span>UserRole<span class="token punctuation">,</span>
+      foreignKey<span class="token punctuation">:</span> <span class="token string">'user_id'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>使用 <code>postman</code> 查询出的数据为：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ccy&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;age&quot;</span><span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-12-01T15:01:49.000Z&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-12-01T15:01:49.000Z&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updatedAt&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;roles&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;管理员&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;updatedAt&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;user_role&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;user_id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;role_id&quot;</span><span class="token operator">:</span> <span class="token number">1</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ccy&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;age&quot;</span><span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-12-01T15:02:07.000Z&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-12-01T15:02:07.000Z&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updatedAt&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;roles&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ccy&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;age&quot;</span><span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-12-01T15:04:53.000Z&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-12-01T15:04:53.000Z&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updatedAt&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;roles&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.7b18d2f0.js" defer></script><script src="/assets/js/30.ef956d23.js" defer></script>
+  </body>
+</html>

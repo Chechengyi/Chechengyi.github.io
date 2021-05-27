@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>滑动窗口 | 车程一的博客</title>
+    <meta name="description" content="车程一的博客">
+    <link rel="icon" href="/vue-logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.2fbf6f8b.css" as="style"><link rel="preload" href="/assets/js/app.7b18d2f0.js" as="script"><link rel="preload" href="/assets/js/49.a81b7774.js" as="script"><link rel="prefetch" href="/assets/js/10.ea08bc69.js"><link rel="prefetch" href="/assets/js/11.59d62fd9.js"><link rel="prefetch" href="/assets/js/12.426af9d7.js"><link rel="prefetch" href="/assets/js/13.b2bd6144.js"><link rel="prefetch" href="/assets/js/14.1790ff5e.js"><link rel="prefetch" href="/assets/js/15.584f93ea.js"><link rel="prefetch" href="/assets/js/16.659d2a43.js"><link rel="prefetch" href="/assets/js/17.7825b058.js"><link rel="prefetch" href="/assets/js/18.0b08fef9.js"><link rel="prefetch" href="/assets/js/19.c553a9ae.js"><link rel="prefetch" href="/assets/js/2.ef1579f9.js"><link rel="prefetch" href="/assets/js/20.1a95086a.js"><link rel="prefetch" href="/assets/js/21.57c66887.js"><link rel="prefetch" href="/assets/js/22.3570ca0d.js"><link rel="prefetch" href="/assets/js/23.7fe8ebe9.js"><link rel="prefetch" href="/assets/js/24.5c706192.js"><link rel="prefetch" href="/assets/js/25.d8757158.js"><link rel="prefetch" href="/assets/js/26.8399a71b.js"><link rel="prefetch" href="/assets/js/27.4b3a213a.js"><link rel="prefetch" href="/assets/js/28.eb31cdf1.js"><link rel="prefetch" href="/assets/js/29.577144a6.js"><link rel="prefetch" href="/assets/js/3.62eea2c7.js"><link rel="prefetch" href="/assets/js/30.ef956d23.js"><link rel="prefetch" href="/assets/js/31.2e8ab40d.js"><link rel="prefetch" href="/assets/js/32.9d1685a0.js"><link rel="prefetch" href="/assets/js/33.d800be4d.js"><link rel="prefetch" href="/assets/js/34.85d350fe.js"><link rel="prefetch" href="/assets/js/35.1625e166.js"><link rel="prefetch" href="/assets/js/36.5cf7699d.js"><link rel="prefetch" href="/assets/js/37.0437fe8d.js"><link rel="prefetch" href="/assets/js/38.ca058290.js"><link rel="prefetch" href="/assets/js/39.d4f95e20.js"><link rel="prefetch" href="/assets/js/4.91c625b2.js"><link rel="prefetch" href="/assets/js/40.211acfac.js"><link rel="prefetch" href="/assets/js/41.a5df0168.js"><link rel="prefetch" href="/assets/js/42.6318b490.js"><link rel="prefetch" href="/assets/js/43.a6543bac.js"><link rel="prefetch" href="/assets/js/44.b04565e5.js"><link rel="prefetch" href="/assets/js/45.3bb1a5c1.js"><link rel="prefetch" href="/assets/js/46.15ed4362.js"><link rel="prefetch" href="/assets/js/47.e838dcd2.js"><link rel="prefetch" href="/assets/js/48.0a220d6c.js"><link rel="prefetch" href="/assets/js/5.a6bc510c.js"><link rel="prefetch" href="/assets/js/50.5ae2a1df.js"><link rel="prefetch" href="/assets/js/51.1e50c0a5.js"><link rel="prefetch" href="/assets/js/52.05832c5b.js"><link rel="prefetch" href="/assets/js/6.edf1ab01.js"><link rel="prefetch" href="/assets/js/7.75a4d63f.js"><link rel="prefetch" href="/assets/js/8.ac427bc7.js"><link rel="prefetch" href="/assets/js/9.7c5ccd0b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2fbf6f8b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">车程一的博客</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div> <a href="https://github.com/chechengyi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    我的github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div> <a href="https://github.com/chechengyi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    我的github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>前端实战</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>js相关</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>react理解</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>总结记录</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>数据结构算法</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/数据结构算法/归并排序.html" class="sidebar-link">归并排序</a></li><li><a href="/blog/数据结构算法/快速排序.html" class="sidebar-link">快速排序</a></li><li><a href="/blog/数据结构算法/插入排序和希尔排序.html" class="sidebar-link">插入排序和希尔排序</a></li><li><a href="/blog/数据结构算法/动态规划学习.html" class="sidebar-link">动态规划学习</a></li><li><a href="/blog/数据结构算法/回溯算法学习.html" class="sidebar-link">回溯算法学习</a></li><li><a href="/blog/数据结构算法/最小堆.html" class="sidebar-link">最小堆</a></li><li><a href="/blog/数据结构算法/滑动窗口.html" class="active sidebar-link">滑动窗口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/数据结构算法/滑动窗口.html#滑动窗口的最大值" class="sidebar-link">滑动窗口的最大值</a></li><li class="sidebar-sub-header"><a href="/blog/数据结构算法/滑动窗口.html#可获得的最大点数" class="sidebar-link">可获得的最大点数</a></li><li class="sidebar-sub-header"><a href="/blog/数据结构算法/滑动窗口.html#替换后的最长重复字符串" class="sidebar-link">替换后的最长重复字符串</a></li></ul></li><li><a href="/blog/数据结构算法/字典树.html" class="sidebar-link">字典树</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="滑动窗口"><a href="#滑动窗口" aria-hidden="true" class="header-anchor">#</a> 滑动窗口</h1> <h2 id="滑动窗口的最大值"><a href="#滑动窗口的最大值" aria-hidden="true" class="header-anchor">#</a> 滑动窗口的最大值</h2> <p>示例 1：</p> <div class="language- extra-class"><pre class="language-text"><code>输入：nums = [1,3,-1,-3,5,3,6,7], k = 3
+输出：[3,3,5,5,6,7]
+解释：
+滑动窗口的位置                最大值
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/sliding-window-maximum
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+</code></pre></div><p>谜底就出在谜面上，这道题的题目就叫做滑动窗口的最大值。最终题目的答案就是在 k 大小的滑动窗口在从最左端移动到最右端的时候，滑动窗口中出现的最大值，最终返回一个一维数组。</p> <p>掌握这道题，能让我们熟悉滑动窗口在向右移动的过程中的基本的操作，但是其实解决这道题的关键思想在于构建一个“单调队列”。</p> <p>在 leetcode 的很多题解中都称为“单调栈”，但其实在写的过程中发现这个数据结构左能出右能进，我觉得称为队列更合理一点。这个队列它保存的就是数组的下标，而且它保证了一点，就是最左端的下标所对应的值是这个队列中最大的。这样做就使得，我们只要取最左端的值，就能得到当前滑动窗口的最大值。当然，在滑动窗口向右移动的过程中，我们还需要注意判断最左端的值是否已经不处于滑动窗口的视野当中，以及右侧进入的新的数入队列。接下来我们用这个思想模拟一下例子。</p> <p>我们设“单调队列”为task。滑动窗口的左侧为left，右侧为right，初始的时候left=right=0。</p> <p>首先，是要使滑动窗口的大小等于k（这里为3），1进入task，然后3进入task但是3比1大所以1 <code>pop()</code>，然后-1进入task（注意task里面保存的是下标）。此时已经得到了第一个滑动窗口中的最大值，那就是<code>task[0]</code>，下标为1，所以值是3.</p> <p>从现在开始，滑动窗口开始往右移动了。此时right=3了，首先将进进入滑动窗口视野中的元素-3插入到队列当中。然后此时left=1，看看task最左侧的下标是否还处于滑动窗口的视野当中，如果不处于则要将其 <code>shiht()</code>。然后当前滑动窗口的最大值的下标还是 <code>task[0]</code>，重复这样的操作，直到滑动窗口移动到最右端，这样就能得到答案了。接下来上代码：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">maxSlidingWindow</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length
+    <span class="token keyword">let</span> queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span> queue<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> nums<span class="token punctuation">[</span>queue<span class="token punctuation">[</span>queue<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            queue<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">let</span> ret <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>queue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token keyword">let</span> i<span class="token operator">=</span>k<span class="token punctuation">;</span> i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 将进入到滑动窗口的元素push到 队列当中</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span> queue<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> nums<span class="token punctuation">[</span>queue<span class="token punctuation">[</span>queue<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            queue<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+        <span class="token comment">// 如果当前队列中最左侧的下标已经不再滑动窗口内，删除</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>queue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span>  <span class="token punctuation">(</span>i<span class="token operator">-</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            queue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        ret<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>queue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ret
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="可获得的最大点数"><a href="#可获得的最大点数" aria-hidden="true" class="header-anchor">#</a> 可获得的最大点数</h2> <p>几张卡牌 排成一行，每张卡牌都有一个对应的点数。点数由整数数组 cardPoints 给出。</p> <p>每次行动，你可以从行的开头或者末尾拿一张卡牌，最终你必须正好拿 k 张卡牌。</p> <p>你的点数就是你拿到手中的所有卡牌的点数之和。</p> <p>给你一个整数数组 cardPoints 和整数 k，请你返回可以获得的最大点数。</p> <div class="language- extra-class"><pre class="language-text"><code>示例 1：
+
+输入：cardPoints = [1,2,3,4,5,6,1], k = 3
+输出：12
+解释：第一次行动，不管拿哪张牌，你的点数总是 1 。但是，先拿最右边的卡牌将会最大化你的可获得点数。最优策略是拿右边的三张牌，最终点数为 1 + 6 + 5 = 12 。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+</code></pre></div><p>换一个角度去思考这个问题，每次拿牌只能从行的开头或者末尾去拿，站在数组的角度去考虑，那么最终剩下的牌一定是连续的子数组，且这个数组的长度为 <code>cardPoints.length - k</code>，而总的点数是不会改变的，所以可以将问题转化为：在 <code>cardPoints</code> 中找出一个长度为 <code>cardPoints.length - k</code> 的数组其和最小。最终答案就是数组总和减去最小滑动窗口总和。接下来直接贴出代码：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">maxScore</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>cardPoints<span class="token punctuation">,</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> totalSum <span class="token operator">=</span> cardPoints<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=&gt;</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span>
+  <span class="token keyword">let</span> windowSize <span class="token operator">=</span> cardPoints<span class="token punctuation">.</span>length <span class="token operator">-</span> k
+  <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>windowSize <span class="token punctuation">)</span> <span class="token keyword">return</span> totalSum
+  <span class="token keyword">let</span> windowSum <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">let</span> minWindowSum <span class="token operator">=</span> <span class="token number">0</span>  
+  <span class="token keyword">let</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>right <span class="token operator">&lt;</span> windowSize<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    windowSum <span class="token operator">+=</span> cardPoints<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+    right<span class="token operator">++</span>
+  <span class="token punctuation">}</span>
+  minWindowSum <span class="token operator">=</span> windowSum
+  <span class="token keyword">while</span><span class="token punctuation">(</span> right <span class="token operator">&lt;</span> cardPoints<span class="token punctuation">.</span>length <span class="token punctuation">)</span><span class="token punctuation">{</span>
+  	windowSum <span class="token operator">=</span> windowSum <span class="token operator">-</span> cardPoints<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">+</span> cardPoints<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+  	minWindowSum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>windowSum<span class="token punctuation">,</span> minWindowSum<span class="token punctuation">)</span>
+  	right<span class="token operator">++</span>
+  	left<span class="token operator">++</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> totalSum <span class="token operator">-</span> minWindowSum
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="替换后的最长重复字符串"><a href="#替换后的最长重复字符串" aria-hidden="true" class="header-anchor">#</a> 替换后的最长重复字符串</h2> <div class="language- extra-class"><pre class="language-text"><code>给你一个仅由大写英文字母组成的字符串，你可以将任意位置上的字符替换成另外的字符，总共可最多替换 k 次。在执行上述操作后，找到包含重复字母的最长子串的长度。
+
+注意：字符串长度 和 k 不会超过 104。
+
+示例 1：
+
+输入：s = &quot;ABAB&quot;, k = 2
+输出：4
+解释：用两个'A'替换为两个'B',反之亦然。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/longest-repeating-character-replacement
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+</code></pre></div><p>这个其实也是一个求字符串字串的问题。让我们来思考一下，假如现在有一个字符串，我能做k次替换操作，现在想要让这个字符串中的
+重复字母尽可能的多，那么我的做法应该是找到这个字符串中重复字母最多的那一个然后把其他字符替换成这个字符。
+所以，对应到这个题当中，毫无疑问我们要保留的字符就是当前出现次数最多的字符，而题目又要求了最终要的结果是连续的字符串，所以，这就限制了字符串的长度（也就是滑动窗口的大小）。接下来直接上代码：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">characterReplacement</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 用来记录滑动窗口内字母出现的次数</span>
+  <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> max <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">let</span> ret <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment">// 用来记录最优的解 </span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span> right <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 一个字母进入窗口，在map中将次数加一，并且更新最大字母重复次数</span>
+    <span class="token keyword">let</span> char <span class="token operator">=</span> s<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> char<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token string">'A'</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    map<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token operator">++</span>
+    max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span> map<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment">// 判断当前窗口的字符串是否符合规则，</span>
+    <span class="token comment">// 如果当前窗口长度减去最大字母出现次数 的值 大于最大替换次数 K</span>
+    <span class="token comment">// 则不符合规则 所以整个窗口往左移动，left++ 且要将 map中记录的值减去</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">-</span> max <span class="token operator">&gt;</span> k <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      map<span class="token punctuation">[</span>s<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token string">'A'</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span>  
+      left<span class="token operator">++</span>
+    <span class="token punctuation">}</span>
+    right<span class="token operator">++</span>
+    ret <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>ret<span class="token punctuation">,</span> right<span class="token operator">-</span>left<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> ret
+  <span class="token comment">// return right - left</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>其实这段代码还有一个可以优化的点，那就是不需要使用 <code>ret</code> 来记录最优解。因为每一次循环right都在向右移动，不符合条件的时候left才会向左移动，这说明 <code>right-left</code> 的值一定是递增的。所以最后 <code>right-left</code> 一定是最优解。</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.7b18d2f0.js" defer></script><script src="/assets/js/49.a81b7774.js" defer></script>
+  </body>
+</html>

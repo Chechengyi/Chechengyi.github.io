@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>实现保持图片比例、等高铺满一行排列 | 车程一的博客</title>
+    <meta name="description" content="车程一的博客">
+    <link rel="icon" href="/vue-logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.2fbf6f8b.css" as="style"><link rel="preload" href="/assets/js/app.7b18d2f0.js" as="script"><link rel="preload" href="/assets/js/24.5c706192.js" as="script"><link rel="prefetch" href="/assets/js/10.ea08bc69.js"><link rel="prefetch" href="/assets/js/11.59d62fd9.js"><link rel="prefetch" href="/assets/js/12.426af9d7.js"><link rel="prefetch" href="/assets/js/13.b2bd6144.js"><link rel="prefetch" href="/assets/js/14.1790ff5e.js"><link rel="prefetch" href="/assets/js/15.584f93ea.js"><link rel="prefetch" href="/assets/js/16.659d2a43.js"><link rel="prefetch" href="/assets/js/17.7825b058.js"><link rel="prefetch" href="/assets/js/18.0b08fef9.js"><link rel="prefetch" href="/assets/js/19.c553a9ae.js"><link rel="prefetch" href="/assets/js/2.ef1579f9.js"><link rel="prefetch" href="/assets/js/20.1a95086a.js"><link rel="prefetch" href="/assets/js/21.57c66887.js"><link rel="prefetch" href="/assets/js/22.3570ca0d.js"><link rel="prefetch" href="/assets/js/23.7fe8ebe9.js"><link rel="prefetch" href="/assets/js/25.d8757158.js"><link rel="prefetch" href="/assets/js/26.8399a71b.js"><link rel="prefetch" href="/assets/js/27.4b3a213a.js"><link rel="prefetch" href="/assets/js/28.eb31cdf1.js"><link rel="prefetch" href="/assets/js/29.577144a6.js"><link rel="prefetch" href="/assets/js/3.62eea2c7.js"><link rel="prefetch" href="/assets/js/30.ef956d23.js"><link rel="prefetch" href="/assets/js/31.2e8ab40d.js"><link rel="prefetch" href="/assets/js/32.9d1685a0.js"><link rel="prefetch" href="/assets/js/33.d800be4d.js"><link rel="prefetch" href="/assets/js/34.85d350fe.js"><link rel="prefetch" href="/assets/js/35.1625e166.js"><link rel="prefetch" href="/assets/js/36.5cf7699d.js"><link rel="prefetch" href="/assets/js/37.0437fe8d.js"><link rel="prefetch" href="/assets/js/38.ca058290.js"><link rel="prefetch" href="/assets/js/39.d4f95e20.js"><link rel="prefetch" href="/assets/js/4.91c625b2.js"><link rel="prefetch" href="/assets/js/40.211acfac.js"><link rel="prefetch" href="/assets/js/41.a5df0168.js"><link rel="prefetch" href="/assets/js/42.6318b490.js"><link rel="prefetch" href="/assets/js/43.a6543bac.js"><link rel="prefetch" href="/assets/js/44.b04565e5.js"><link rel="prefetch" href="/assets/js/45.3bb1a5c1.js"><link rel="prefetch" href="/assets/js/46.15ed4362.js"><link rel="prefetch" href="/assets/js/47.e838dcd2.js"><link rel="prefetch" href="/assets/js/48.0a220d6c.js"><link rel="prefetch" href="/assets/js/49.a81b7774.js"><link rel="prefetch" href="/assets/js/5.a6bc510c.js"><link rel="prefetch" href="/assets/js/50.5ae2a1df.js"><link rel="prefetch" href="/assets/js/51.1e50c0a5.js"><link rel="prefetch" href="/assets/js/52.05832c5b.js"><link rel="prefetch" href="/assets/js/6.edf1ab01.js"><link rel="prefetch" href="/assets/js/7.75a4d63f.js"><link rel="prefetch" href="/assets/js/8.ac427bc7.js"><link rel="prefetch" href="/assets/js/9.7c5ccd0b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2fbf6f8b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">车程一的博客</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div> <a href="https://github.com/chechengyi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    我的github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div> <a href="https://github.com/chechengyi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    我的github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>前端实战</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/前端实战/跨域及其处理方式.html" class="sidebar-link">跨域及其处理方式</a></li><li><a href="/blog/前端实战/移动端适配问题.html" class="sidebar-link">移动端适配问题</a></li><li><a href="/blog/前端实战/给localStorage加上过期时间.html" class="sidebar-link">给localStorage加上过期时间</a></li><li><a href="/blog/前端实战/react实现一个分页、搜索高阶组件.html" class="sidebar-link">react实现一个分页、搜索高阶组件</a></li><li><a href="/blog/前端实战/nginx设置资源缓存实战.html" class="sidebar-link">nginx设置资源缓存实战</a></li><li><a href="/blog/前端实战/前后端分离下前端权限处理.html" class="sidebar-link">前后端分离下前端权限处理</a></li><li><a href="/blog/前端实战/从react hooks“闭包陷阱”切入，浅谈react hooks.html" class="sidebar-link">从react hooks“闭包陷阱”切入，浅谈react hooks</a></li><li><a href="/blog/前端实战/BFC及其理解.html" class="sidebar-link">BFC及其理解</a></li><li><a href="/blog/前端实战/react优化-精确更新视窗内组件.html" class="sidebar-link">react优化-精确更新视窗内组件</a></li><li><a href="/blog/前端实战/typescript内置类型学习.html" class="sidebar-link">typescript内置类型学习</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>js相关</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>react理解</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>总结记录</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>数据结构算法</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="实现保持图片比例、等高铺满一行排列"><a href="#实现保持图片比例、等高铺满一行排列" aria-hidden="true" class="header-anchor">#</a> 实现保持图片比例、等高铺满一行排列</h1> <p>其实这也是面试的时候所遇到的一道题，当时是只给出了大概的思路。现在有时间整理一下思路顺便写一下实现。其实所想要的这个效果就是百度搜索图片的时候的一个效果：</p> <p><img src="https://s3.ax1x.com/2020/11/18/Dm1RbT.png" alt></p> <p>场景就是一个搜索图片的场景，图片已经知道宽高，最终渲染出的图片的顺序不能改变。图片的纵横比也不能改变（就是不能被压变形）还有图片不允许被裁剪，然后效果就是呈现出来的这种效果。</p> <p>首先可以确定的一点是，一行渲染出来的图片宽度就等于容器的宽度。但是问题在于如何去决定一行渲染几张图片？ 如果一行是渲染四张图片，那么可以很轻松的计算出每张图片此时的宽度。但是要保持图片的纵横比又不能裁剪图片的话，高度不能保证是一致的，除非每张图片的纵横比都相等。但是这种美妙的场景很显然不会出现。</p> <p>面试官看我面露难色，问我需不需要给出一点提示，我说好吧。然后面试官说如果固定一个初始高度的话。。。这一句话如醍醐灌顶，电光火石之间，一个想法就在心里出来了。</p> <p>首先，容器的宽度是很容易知道的。比如如果初设的高度是300，图片原始的宽高也是知道的，那么就可以计算出300与之对应的高度。按照这样的想法先开始排第一排，比如现在我们想每一行的总的宽度是1000。每一张图片的宽高都不一样（但是是已知的），现在我们限定了图片高度，那么根据纵横比就能算出图片的宽度。按照这样排下去，总会排到一张图片这时候的宽度加上之前已经排好的宽度大于了1000。这个时候，就要决定要不要留下。</p> <p><img src="https://s3.ax1x.com/2020/11/18/DmJ5ex.png" alt></p> <p>如图所示，排到第四张图片的时候这时候四张图片总的宽度已经超过容器宽度了，如何决定第四张图片要不要留在第一行呢？首先，要确保一行的图片宽度加起来能够刚好等于容器的宽度，这个时候就需要去调整图片的高度以此改变图片的宽度。在看实际场景，如果要留下第四张图片，那么此时需要缩小图片高度，如果要移除第四张图片，那么就要增加图片高度。在看第四张图片超过的部分是小于自身的一半的，这意味着保留图片比一处图片所需要调整的宽度要小。所以选择保留第四张图片。</p> <p>思路有了写下来是代码实现：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>图片等高排列<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+		<span class="token selector">*</span> <span class="token punctuation">{</span>
+			<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+			<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token selector">.item</span> <span class="token punctuation">{</span>
+			<span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+			<span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+			<span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+			<span class="token property">border</span><span class="token punctuation">:</span> 1px solid #fff<span class="token punctuation">;</span>
+			<span class="token property">vertical-align</span><span class="token punctuation">:</span> bottom<span class="token punctuation">;</span>
+			<span class="token property">margin-top</span><span class="token punctuation">:</span> 6px<span class="token punctuation">;</span>
+			<span class="token property">margin-left</span><span class="token punctuation">:</span> 6px<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./imgList.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+		
+
+		<span class="token keyword">let</span> containerDom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">)</span>
+
+		<span class="token keyword">const</span> initHeight <span class="token operator">=</span> <span class="token number">300</span>
+		<span class="token keyword">const</span> sumWidth <span class="token operator">=</span> containerDom<span class="token punctuation">.</span>offsetWidth <span class="token operator">-</span> <span class="token number">3</span> <span class="token comment">// 减 3 留一点误差的空间，以免元素换行</span>
+		<span class="token keyword">const</span> margin <span class="token operator">=</span> <span class="token number">6</span> <span class="token comment">// 图片之间的间隙</span>
+
+		<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token function">getImgList</span><span class="token punctuation">(</span>imgList<span class="token punctuation">)</span>
+		<span class="token keyword">let</span> divDom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+
+		arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+			<span class="token keyword">let</span> imgDom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+			imgDom<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> item<span class="token punctuation">.</span>width <span class="token operator">+</span> <span class="token string">'px'</span>
+			imgDom<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> item<span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token string">'px'</span>
+			imgDom<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">'item'</span>
+			divDom<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>imgDom<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+		containerDom<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>divDom<span class="token punctuation">)</span>
+
+		<span class="token keyword">function</span> <span class="token function">getImgList</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+			<span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span>
+			<span class="token keyword">while</span><span class="token punctuation">(</span>index <span class="token operator">&lt;</span> list<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+				<span class="token keyword">let</span> row <span class="token operator">=</span> <span class="token function">computedRow</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> list<span class="token punctuation">)</span>
+				console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'row'</span><span class="token punctuation">,</span> row<span class="token punctuation">)</span>
+				arr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+				index <span class="token operator">+=</span> row<span class="token punctuation">.</span>length
+			<span class="token punctuation">}</span>
+			<span class="token keyword">return</span> arr
+		<span class="token punctuation">}</span>
+
+		<span class="token keyword">function</span> <span class="token function">computedRow</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">let</span> ret <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+			<span class="token keyword">let</span> index <span class="token operator">=</span> startIndex
+			<span class="token keyword">let</span> recordWidth <span class="token operator">=</span> <span class="token number">0</span>
+
+			<span class="token keyword">let</span> offset
+
+			<span class="token keyword">while</span><span class="token punctuation">(</span> index <span class="token operator">&lt;</span> list<span class="token punctuation">.</span>length <span class="token punctuation">)</span><span class="token punctuation">{</span>
+				<span class="token keyword">let</span> item <span class="token operator">=</span> list<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+				<span class="token keyword">let</span> currentWidth <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>width <span class="token operator">*</span> initHeight<span class="token punctuation">)</span> <span class="token operator">/</span> item<span class="token punctuation">.</span>height<span class="token punctuation">)</span>
+				recordWidth <span class="token operator">+=</span> currentWidth
+				ret<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+					thumbURL<span class="token punctuation">:</span> item<span class="token punctuation">.</span>thumbURL<span class="token punctuation">,</span>
+					width<span class="token punctuation">:</span> currentWidth<span class="token punctuation">,</span>
+					height<span class="token punctuation">:</span> initHeight
+				<span class="token punctuation">}</span><span class="token punctuation">)</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span> recordWidth <span class="token operator">&gt;=</span> sumWidth <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+					<span class="token keyword">if</span> <span class="token punctuation">(</span>  recordWidth <span class="token operator">-</span> sumWidth <span class="token operator">&gt;</span> <span class="token punctuation">(</span>currentWidth<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+						index<span class="token operator">--</span>
+						ret<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+						recordWidth <span class="token operator">-=</span> currentWidth
+					<span class="token punctuation">}</span>
+					<span class="token keyword">break</span>
+				<span class="token punctuation">}</span>
+				index<span class="token operator">++</span>
+			<span class="token punctuation">}</span>
+			
+			<span class="token comment">// 这里的ret就是将要形成一行的数据</span>
+
+			offset <span class="token operator">=</span> recordWidth <span class="token operator">-</span> sumWidth
+
+			<span class="token comment">// 这里传递给 recomputedWidth 时的总的宽度将 元素间隙减出来。这样才能在有间隙的情况下，</span>
+			<span class="token comment">// 算出正确的高度</span>
+			ret <span class="token operator">=</span> <span class="token function">recomputedWidth</span><span class="token punctuation">(</span>ret<span class="token punctuation">,</span> offset<span class="token punctuation">,</span> initHeight<span class="token punctuation">,</span> sumWidth<span class="token operator">-</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>length <span class="token operator">*</span> margin<span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span> ret
+		<span class="token punctuation">}</span>
+
+
+		<span class="token keyword">function</span> <span class="token function">recomputedWidth</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> offset<span class="token punctuation">,</span> prevHeight<span class="token punctuation">,</span> sumWidth<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">let</span> newHeight <span class="token operator">=</span> offset <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> prevHeight<span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">:</span> prevHeight <span class="token operator">+</span> <span class="token number">1</span>
+			<span class="token keyword">let</span> recordWidth <span class="token operator">=</span> <span class="token number">0</span>
+			<span class="token keyword">let</span> ret <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+			ret <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>item<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+				<span class="token keyword">let</span> currentWidth <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>width <span class="token operator">*</span> newHeight<span class="token punctuation">)</span> <span class="token operator">/</span> item<span class="token punctuation">.</span>height<span class="token punctuation">)</span>
+				recordWidth <span class="token operator">+=</span> currentWidth
+				<span class="token keyword">return</span> <span class="token punctuation">{</span>
+					<span class="token operator">...</span>item<span class="token punctuation">,</span>
+					width<span class="token punctuation">:</span> currentWidth<span class="token punctuation">,</span>
+					height<span class="token punctuation">:</span> newHeight
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">}</span><span class="token punctuation">)</span>
+			offset <span class="token operator">=</span> recordWidth <span class="token operator">-</span> sumWidth
+			<span class="token keyword">if</span> <span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>offset<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">2</span> <span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">recomputedWidth</span><span class="token punctuation">(</span>ret<span class="token punctuation">,</span> recordWidth <span class="token operator">-</span> sumWidth<span class="token punctuation">,</span> newHeight<span class="token punctuation">,</span> sumWidth<span class="token punctuation">)</span>
+			<span class="token keyword">return</span> ret		
+		<span class="token punctuation">}</span>
+
+	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.7b18d2f0.js" defer></script><script src="/assets/js/24.5c706192.js" defer></script>
+  </body>
+</html>
